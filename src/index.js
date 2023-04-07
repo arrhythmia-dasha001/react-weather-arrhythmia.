@@ -1,12 +1,16 @@
 import React from "react";
-import * as ReactDOMClient from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
-const container = document.querySelector("#weather");
-const root = ReactDOMClient.createRoot(container);
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 
 root.render(
-  <BrowserRouter>
+  <StrictMode>
     <App />
-  </BrowserRouter>
+  </StrictMode>
 );
